@@ -1,0 +1,57 @@
+
+
+<div class="background col-12">
+  <div class="row">
+    <div class="col-7">
+      <div class="pt-5">
+        <h2 class="pt-4">TITOLO</h2>
+        <p class="pt-2">InfoSalute dal 2008 è il portale di riferimento sul mondo della salute e della sanità italiana. Su QSalute puoi leggere ed inserire recensioni su ospedali, case di cura, medici, potendo trovare informazioni preziose in base alle testimonianze degli altri pazienti. Leggi Chi siamo per maggiori informazioni. I contatti di QSalute sono indicati nella pagina dedicata.
+          Come partecipare a QSalute
+          Come esprimere un'opinione - Per esprimere un'opinione su un reparto ospedaliero, su una struttura (ospedale o casa di cura) o su un farmaco devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la tua opinione' compilando il modulo che si caricherà. Per trovare la scheda del reparto puoi utilizzare il box di ricerca sulla destra oppure la classificazione geografica che trovi usufruendo del menu in alto. Ricorda di riportare la tua testimonianza con il maggior grado di dettaglio possibile, utilizzando un linguaggio corretto.
+           </p>
+      </div>
+    </div>
+    <div class="card-container col-12 col-md-5 px-5 pt-5">
+      <div class="card p-3 py-0">
+        <div class="card-body">
+          <h4 class="card-title">Register</h4>
+          <form id="register">
+
+            <form class="form-group" [formGroup]="fG" (ngSubmit)="register()">
+              <div class="mb-3">
+                <label for="Nome">Nome:</label>
+                <input class="form-control" type="text" placeholder="Inserisci il tuo nome" name="name" formControlName = 'name'>
+              </div>
+
+              <div class="mb-3">
+                <label for="Lastname">Cognome:</label>
+                <input class="form-control" type="text" placeholder="Inserisci il tuo cognome" name="lastname" formControlName = 'lastname'>
+              </div>
+
+              <div class="mb-3">
+                <label for="Username">Username:</label>
+                <input class="form-control" type="username" placeholder="Inserisci il tuo username" name="username" formControlName = 'username'>
+              </div>
+
+              <div class="mb-3">
+                <label for="Email">Email:</label>
+                <input class="form-control" type="email" placeholder="Inserisci la tua email" name="email" formControlName = 'email'>
+              </div>
+
+              <div class="mb-3">
+                <label for="password">Password:</label>
+                <input class="form-control" type="password" placeholder="Inserisci la tua password" name="password" formControlName = 'password'>
+              </div>
+
+              <button id="registerB" class="btn btn-dark" type="submit">Registrati</button>
+
+            </form>
+
+        </form>
+          <p class="testo pt-2 d-flex align-items-center">Hai già un account? <button class="btn btn-outline-light ms-2"
+              [routerLink]="['/login']">Accedi</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

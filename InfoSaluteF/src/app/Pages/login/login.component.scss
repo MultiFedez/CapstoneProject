@@ -1,0 +1,27 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/sebastian-dumitru-36g19a7ivrs-unsplash.jpg");
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card{
+  border-radius: 5px;
+  background: rgb(8, 82, 167,0.5);
+  color:white
+}
+
+.testo{
+  font-size: 0.8rem;
+}
