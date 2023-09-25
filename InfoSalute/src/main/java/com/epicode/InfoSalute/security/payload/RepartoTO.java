@@ -11,5 +11,7 @@ public class RepartoTO {
 
 	private String nome;
 	private String piano;
+	private String descrizione;
 	private Long ospedaleid;
+	
 }

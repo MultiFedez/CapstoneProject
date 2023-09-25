@@ -22,6 +22,7 @@ public class RepartoServiceImpl implements RepartoService{
 		Reparto r1 = provider.getObject().builder()
 				.nome(r.getNome())
 				.piano(r.getPiano())
+				.descrizione(r.getDescrizione())
 				.ospedaleid(r.getOspedaleid())
 				.build();
 				return repartoRepository.save(r1);

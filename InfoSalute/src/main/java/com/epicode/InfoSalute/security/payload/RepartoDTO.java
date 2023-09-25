@@ -12,5 +12,6 @@ public class RepartoDTO {
 	private Long id;
 	private String nome;
 	private String piano;
+	private String descrizione;
 	private Long ospedaleid;
 }

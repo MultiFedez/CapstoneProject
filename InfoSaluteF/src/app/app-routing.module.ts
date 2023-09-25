@@ -5,6 +5,7 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { OspedaliComponent } from './Pages/ospedali/ospedali.component';
 import { AuthGuard } from './Guard/auth.guard';
+import { OspedaleComponent } from './Pages/ospedali/ospedale/ospedale.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,14 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },{
     path: "ospedali",
+    component: OspedaliComponent,
+    canActivate: [AuthGuard]
+  },{
+    path: "ospedale/:id",
+    component: OspedaleComponent,
+    canActivate: [AuthGuard]
+  },{
+    path: "ospedali/:nome",
     component: OspedaliComponent,
     canActivate: [AuthGuard]
   }

@@ -65,4 +65,10 @@ private ComuneRepository comuneRepository;
 		List<Ospedale> o = ospedaleRepository.getByNome(nome);
 		return o;
 	}
+	
+	@Override
+	public List<Ospedale> findOspedaleByComune(String nome){
+		List<Ospedale> o = ospedaleRepository.findOspedaleByComuneNome(nome);
+		return o;
+	}
 }

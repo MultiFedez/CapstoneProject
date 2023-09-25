@@ -27,6 +27,16 @@ getAllOspedali() {
   return this.http.get<IOspedale[]>(this.url + '/all', { headers: this.headers})
 }
 findByNome(nome : string){
-  return this.http.get<IOspedale[]>(this.url + '/' + nome, { headers: this.headers})
+  console.log(nome);
+  return this.http.get<IOspedale[]>(this.url + '/nome/' + nome, { headers: this.headers})
 }
+getById(params: any) {
+  console.log(params);
+  return this.http.get<IOspedale>(this.url + '/' + params.id, { headers: this.headers})
+}
+getOspedaliByComune(nome:string) {
+  console.log(nome);
+  return this.http.get<IOspedale>(this.url + '/byLocation/' + nome, { headers: this.headers})
+}
+
 }

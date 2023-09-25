@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epicode.InfoSalute.security.entity.Comune;
 import com.epicode.InfoSalute.security.entity.Ospedale;
 import com.epicode.InfoSalute.security.payload.OspedaleDTO;
 import com.epicode.InfoSalute.security.payload.OspedaleTO;
@@ -53,11 +54,17 @@ public class OspedaleController {
 		return new ResponseEntity<>(ospedaleService.getOspedaleById(id),HttpStatus.OK);
 	}
 	
-	@GetMapping("/{nome}")
+	@GetMapping("/nome/{nome}")
 	@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<?> findByNome(@PathVariable String nome){
 		List<Ospedale> o = ospedaleService.findByNome(nome);
 		return new ResponseEntity <List<Ospedale>>(o,HttpStatus.OK);
 	}
 	
+	@GetMapping("/byLocation/{nome}")
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<List<Ospedale>> findOspedaleByComune(@PathVariable String nome) {
+	    List<Ospedale> ospedali = ospedaleService.findOspedaleByComune(nome);
+	    return new ResponseEntity<>(ospedali, HttpStatus.OK);
+    }
 }

@@ -1,1 +1,26 @@
-<p>ospedale works!</p>
+<div class="sfondo col-12 px-2 pt-5 h-100">
+  <div class="row pt-3 h-100">
+
+    <div class="col-12 col-md-7 overflow-auto h-100">
+      <div class=" pt-5">
+        <div class="card">
+          <img src="../../../../assets/pexels-pixabay-269077.jpg" class="card-img-top" alt="...">
+          <h2 class="pt-4">{{ospedale.nome}}</h2>
+          <p class="pt-2">{{ospedale.indirizzo}}</p>
+          <p class="pt-2">{{ospedale.descrizione}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5 d-none d-md-inline h-100">
+      <div class="card blu">
+      <form #s="ngForm" (ngSubmit)="submit()">
+        <label for="nome" class="p-1">Cerca Reparti</label>
+        <input name="nome" type="text" class="form-control" id="nome" placeholder="Inserisci il Nome del Reparto"
+          required>
+        <button class="btn btn-dark mt-3" type="submit">Cerca</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

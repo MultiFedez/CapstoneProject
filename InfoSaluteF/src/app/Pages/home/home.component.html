@@ -3,32 +3,47 @@
 
     <div class="col-12 d-inline d-md-none">
       <div class="card blu">
-        <!--<form #f="ngForm" (ngSubmit)="submit()">
-          <label for="Username" class="p-1">Username:</label>
-          <input name="username" type="Username" class="form-control" id="Username"
-            placeholder="Inserisci il tuo username" required ngModel>
-          <div class="form-group">
-            <label for="password" class="p-1">Password:</label>
-            <input type="password" name="password" class="form-control" id="password"
-              placeholder="Inserisci la password" required ngModel>
-          </div>
-          <button class="btn btn-dark mt-3" type="submit">Accedi</button>
-        </form> -->
+        <div class="col-12 pt-5 d-inline d-md-none">
+          <form #f="ngForm" (ngSubmit)="submit()">
+            <label for="nome" class="p-1">Cerca Città</label>
+            <input [(ngModel)]="searchLocation" name="searchLocation" type="text" class="form-control" id="nome"
+              placeholder="Inserisci il Nome dell'Ospedale" required ngModel>
+            <button class="btn btn-dark mt-3" type="submit">Cerca</button>
+          </form>
+        </div>
       </div>
     </div>
 
     <div class="col-12 col-md-7 overflow-auto h-100">
       <div class="pt-5">
         <h2 class="pt-4">TITOLO</h2>
-        <p class="pt-2">InfoSalute nato nel 2023 è il portale di riferimento sul mondo della salute e della sanità italiana. Su QSalute puoi leggere ed inserire recensioni su ospedali, case di cura, medici, potendo trovare informazioni preziose in base alle testimonianze degli altri pazienti. Leggi Chi siamo per maggiori informazioni. I contatti di QSalute sono indicati nella pagina dedicata.
+        <p class="pt-2">InfoSalute nato nel 2023 è il portale che vuole essere il riferimento sul mondo della salute e della sanità
+          italiana. Su InfoSalute puoi leggere ed inserire recensioni su ospedali, case di cura, medici, potendo trovare
+          informazioni preziose in base alle testimonianze degli altri pazienti. Leggi Chi siamo per maggiori
+          informazioni. I contatti di QSalute sono indicati nella pagina dedicata.
           Come partecipare a QSalute
-          Come esprimere un'opinione - Per esprimere un'opinione su un reparto ospedaliero, su una struttura (ospedale o casa di cura) o su un farmaco devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la tua opinione' compilando il modulo che si caricherà. Per trovare la scheda del reparto puoi utilizzare il box di ricerca sulla destra oppure la classificazione geografica che trovi usufruendo del menu in alto. Ricorda di riportare la tua testimonianza con il maggior grado di dettaglio possibile, utilizzando un linguaggio corretto.Come confrontare i reparti - Per confrontare le opinioni dei pazienti di tutta Italia sui reparti degli ospedali italiani utilizza il menu a tendina che trovi nella colonna di destra. I reparti saranno proposti in base al voto medio espresso nelle recensioni dei pazienti. Non si tratta di un criterio di valutazione scientifico ma della sintesi delle recensioni espresse da decine di migliaia di utenti.
-           </p>
+          Come esprimere un'opinione - Per esprimere un'opinione su un reparto ospedaliero, su una struttura (ospedale o
+          casa di cura) o su un farmaco devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la tua
+          opinione' compilando il modulo che si caricherà. Per trovare la scheda del reparto puoi utilizzare il box di
+          ricerca sulla destra oppure la classificazione geografica che trovi usufruendo del menu in alto. Ricorda di
+          riportare la tua testimonianza con il maggior grado di dettaglio possibile, utilizzando un linguaggio
+          corretto.Come confrontare i reparti - Per confrontare le opinioni dei pazienti di tutta Italia sui reparti
+          degli ospedali italiani utilizza il menu a tendina che trovi nella colonna di destra. I reparti saranno
+          proposti in base al voto medio espresso nelle recensioni dei pazienti. Non si tratta di un criterio di
+          valutazione scientifico ma della sintesi delle recensioni espresse da decine di migliaia di utenti.
+        </p>
       </div>
     </div>
 
     <div class="col-5 d-none d-md-inline h-100">
-
+      <div class="card blu">
+        <form #f="ngForm" (ngSubmit)="submit()">
+          <label for="nome" class="p-1">Cerca Città</label>
+          <input [(ngModel)]="searchLocation" name="searchLocation" type="text" class="form-control" id="nome"
+            placeholder="Inserisci il Nome della Città" required ngModel>
+          <button class="btn btn-dark mt-3" type="submit">Cerca</button>
+        </form>
+      </div>
     </div>
+
   </div>
-</div>

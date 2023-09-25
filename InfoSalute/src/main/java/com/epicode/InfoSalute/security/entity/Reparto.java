@@ -30,6 +30,9 @@ public class Reparto {
 	private String piano;
 	
 	@Column(nullable = false)
+	private String descrizione;
+	
+	@Column(nullable = false)
 	private Long ospedaleid;
 	
 }
