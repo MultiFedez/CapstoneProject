@@ -6,6 +6,9 @@ import { HomeComponent } from './Pages/home/home.component';
 import { OspedaliComponent } from './Pages/ospedali/ospedali.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { OspedaleComponent } from './Pages/ospedali/ospedale/ospedale.component';
+import { ComuneComponent } from './Pages/comune/comune.component';
+import { RepartoComponent } from './Pages/reparto/reparto.component';
+import { MedicoComponent } from './Pages/medico/medico.component';
 
 const routes: Routes = [
   {
@@ -31,8 +34,16 @@ const routes: Routes = [
     component: OspedaleComponent,
     canActivate: [AuthGuard]
   },{
-    path: "ospedali/:nome",
-    component: OspedaliComponent,
+    path: "comune/:id",
+    component: ComuneComponent,
+    canActivate: [AuthGuard]
+  },{
+    path: "reparto/:id",
+    component: RepartoComponent,
+    canActivate: [AuthGuard]
+  },{
+    path: "medico/:id",
+    component: MedicoComponent,
     canActivate: [AuthGuard]
   }
 ];

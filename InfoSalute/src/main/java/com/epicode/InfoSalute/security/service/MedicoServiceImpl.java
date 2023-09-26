@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.epicode.InfoSalute.security.entity.Medico;
+import com.epicode.InfoSalute.security.entity.Reparto;
 import com.epicode.InfoSalute.security.payload.MedicoTO;
 import com.epicode.InfoSalute.security.repository.MedicoRepository;
 
@@ -22,7 +23,6 @@ public class MedicoServiceImpl implements MedicoService {
 		Medico m1 = provider.getObject().builder()
 				.nome(m.getNome())
 				.specializzazione(m.getSpecializzazione())
-				.valutazione(m.getValutazione())
 				.repartoid(m.getRepartoid())
 				.build();
 				return medicoRepository.save(m1);
@@ -45,4 +45,9 @@ public class MedicoServiceImpl implements MedicoService {
 		return id;
 	}
 
+	@Override
+	public List<Medico> findMedicoByRepartoid(Long repartoid){
+		List<Medico> m = medicoRepository.findByRepartoid(repartoid);
+		return m;
+	}
 }

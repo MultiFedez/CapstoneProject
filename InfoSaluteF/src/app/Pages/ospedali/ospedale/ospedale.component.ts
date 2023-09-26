@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { IOspedale } from 'src/app/Interfaces/iOspedale';
 import { OspedaleService } from 'src/app/Service/ospedale.service';
+import { RepartoService } from 'src/app/Service/reparto.service';
 
 @Component({
   selector: 'app-ospedale',
@@ -11,11 +12,12 @@ import { OspedaleService } from 'src/app/Service/ospedale.service';
   styleUrls: ['./ospedale.component.scss']
 })
 export class OspedaleComponent implements OnInit {
+
   ospedale: IOspedale = {};
   reparti: IReparto[]=[];
   @ViewChild('f') form!: NgForm;
 
-  constructor(private route: ActivatedRoute, private service: OspedaleService) { }
+  constructor(private route: ActivatedRoute, private service: OspedaleService, private repSvc:RepartoService) { }
 
   submit() {
 
@@ -36,7 +38,9 @@ export class OspedaleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOspedale()
+    this.findRepartoByOspedaleid()
   }
+
   getOspedale() {
     this.route.params.subscribe
       ((params: any) => {
@@ -51,4 +55,20 @@ export class OspedaleComponent implements OnInit {
       }
       )
   }
+
+  findRepartoByOspedaleid(){
+    this.route.params.subscribe
+      ((params: any) => {
+        this.repSvc.findRepartoByOspedaleid(params).subscribe(
+          (res) => {
+            console.log(res);
+            this.reparti = res;
+          },
+          (err) => {
+            console.log(err.error.message);
+          })
+      }
+      )
+  }
+
 }

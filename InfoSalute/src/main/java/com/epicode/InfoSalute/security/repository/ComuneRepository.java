@@ -5,5 +5,6 @@ import com.epicode.InfoSalute.security.entity.Comune;
 
 
 public interface ComuneRepository extends JpaRepository<Comune, Long> {
-
+	
+	Comune findByNome(String nome);
 }

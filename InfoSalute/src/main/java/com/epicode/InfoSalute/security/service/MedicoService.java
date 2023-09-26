@@ -16,4 +16,6 @@ public interface MedicoService {
 
 	Medico getMedicoById(Long id);
 
+	List<Medico> findMedicoByRepartoid(Long repartoid);
+
 }

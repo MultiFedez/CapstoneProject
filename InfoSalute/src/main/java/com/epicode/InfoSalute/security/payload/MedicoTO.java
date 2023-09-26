@@ -13,6 +13,5 @@ public class MedicoTO {
 
 	private String nome;
 	private Specializzazione specializzazione;
-	private String valutazione;
 	private Long repartoid;
 }

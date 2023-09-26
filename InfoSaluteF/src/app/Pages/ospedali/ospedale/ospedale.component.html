@@ -24,3 +24,16 @@
     </div>
   </div>
 </div>
+
+<div class="sfondo col-12 px-2 pt-5 h-100">
+  <div class="row pt-3 h-100">
+    <h1>Reparti Ospedale :</h1>
+    <div class="col-12" *ngFor="let reparto of reparti">
+      <div class="card">
+        <h3>{{reparto.nome}}</h3>
+        <button class="btn btn-primary" [routerLink]="['/reparto/'+ reparto.id]">More Info</button>
+      </div>
+    </div>
+  </div>
+</div>
+

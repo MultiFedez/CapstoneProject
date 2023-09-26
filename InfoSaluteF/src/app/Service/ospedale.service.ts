@@ -34,9 +34,9 @@ getById(params: any) {
   console.log(params);
   return this.http.get<IOspedale>(this.url + '/' + params.id, { headers: this.headers})
 }
-getOspedaliByComune(nome:string) {
+findByComune(nome:any) {
   console.log(nome);
-  return this.http.get<IOspedale>(this.url + '/byLocation/' + nome, { headers: this.headers})
+  return this.http.get<IOspedale[]>(this.url + '/byLocation/' + nome, { headers: this.headers})
 }
 
 }

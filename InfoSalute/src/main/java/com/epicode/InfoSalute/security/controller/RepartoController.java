@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epicode.InfoSalute.security.entity.Ospedale;
 import com.epicode.InfoSalute.security.entity.Reparto;
 import com.epicode.InfoSalute.security.payload.RepartoTO;
 import com.epicode.InfoSalute.security.service.RepartoService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("api/reparto")
+@RequestMapping("/api/reparto")
 public class RepartoController {
 
 @Autowired private RepartoService repartoService;
@@ -49,4 +50,11 @@ public class RepartoController {
 	public ResponseEntity<Object> getRepartoById(@PathVariable Long id){
 		return new ResponseEntity<>(repartoService.getRepartoById(id),HttpStatus.OK);
 	}
+	
+	@GetMapping("/byOspedale/{ospedaleid}")
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<List<Reparto>> findRepartoByOspedaleid(@PathVariable Long ospedaleid) {
+	    List<Reparto> reparti = repartoService.findRepartoByOspedaleid(ospedaleid);
+	    return new ResponseEntity<List<Reparto>>(reparti, HttpStatus.OK);
+    }
 }

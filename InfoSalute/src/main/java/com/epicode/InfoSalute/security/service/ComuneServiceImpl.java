@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.epicode.InfoSalute.security.entity.Comune;
+import com.epicode.InfoSalute.security.entity.Ospedale;
 import com.epicode.InfoSalute.security.payload.ComuneTO;
 import com.epicode.InfoSalute.security.repository.ComuneRepository;
 
@@ -40,5 +41,11 @@ public class ComuneServiceImpl implements ComuneService {
 		Comune c = comuneRepository.findById(id).get();
 		comuneRepository.delete(c);
 		return id;
+	}
+	
+	@Override
+	public Comune findByNome(String nome) {
+		Comune c = comuneRepository.findByNome(nome);
+		return c;
 	}
 }

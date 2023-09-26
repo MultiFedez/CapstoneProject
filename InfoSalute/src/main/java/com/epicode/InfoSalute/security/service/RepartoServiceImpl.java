@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.epicode.InfoSalute.security.entity.Ospedale;
 import com.epicode.InfoSalute.security.entity.Reparto;
 import com.epicode.InfoSalute.security.payload.RepartoTO;
 import com.epicode.InfoSalute.security.repository.RepartoRepository;
@@ -43,5 +44,11 @@ public class RepartoServiceImpl implements RepartoService{
 		Reparto r = repartoRepository.findById(id).get();
 		repartoRepository.delete(r);
 		return id;
+	}
+	
+	@Override
+	public List<Reparto> findRepartoByOspedaleid(Long ospedaleid){
+		List<Reparto> r = repartoRepository.findByOspedaleid(ospedaleid);
+		return r;
 	}
 }

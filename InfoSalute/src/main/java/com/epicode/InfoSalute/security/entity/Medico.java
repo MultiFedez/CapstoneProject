@@ -1,5 +1,7 @@
 package com.epicode.InfoSalute.security.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -30,8 +32,8 @@ public class Medico {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Specializzazione specializzazione;
-	@Column(nullable = false)
-	private String valutazione;
+	
+	private List<Long> valutazione;
 	
 	@Column(nullable = false)
 	private Long repartoid;

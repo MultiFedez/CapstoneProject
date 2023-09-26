@@ -15,4 +15,6 @@ public interface RepartoService {
 
 	Reparto getRepartoById(Long id);
 
+	List<Reparto> findRepartoByOspedaleid(Long ospedaleid);
+
 }

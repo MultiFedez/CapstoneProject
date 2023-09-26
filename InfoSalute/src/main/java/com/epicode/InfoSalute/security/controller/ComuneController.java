@@ -16,13 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epicode.InfoSalute.security.entity.Comune;
+import com.epicode.InfoSalute.security.entity.Ospedale;
 import com.epicode.InfoSalute.security.payload.ComuneDTO;
 import com.epicode.InfoSalute.security.payload.ComuneTO;
 import com.epicode.InfoSalute.security.service.ComuneService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("api/comune")
+@RequestMapping("/api/comune")
 public class ComuneController {
 
 @Autowired private ComuneService comuneService;
@@ -51,5 +52,11 @@ public class ComuneController {
 		return new ResponseEntity<>(comuneService.getComuneById(id),HttpStatus.OK);
 	}
 	
+	@GetMapping("/nome/{nome}")
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<?> findByNome(@PathVariable String nome){
+		Comune c = comuneService.findByNome(nome);
+		return new ResponseEntity <Comune>(c,HttpStatus.OK);
+	}
 
 }

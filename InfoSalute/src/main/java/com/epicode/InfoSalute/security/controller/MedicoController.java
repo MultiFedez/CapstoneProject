@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epicode.InfoSalute.security.entity.Medico;
+import com.epicode.InfoSalute.security.entity.Reparto;
 import com.epicode.InfoSalute.security.payload.MedicoDTO;
 import com.epicode.InfoSalute.security.payload.MedicoTO;
 import com.epicode.InfoSalute.security.service.MedicoService;
@@ -51,6 +52,12 @@ public class MedicoController {
 		return new ResponseEntity<>(medicoService.getMedicoById(id),HttpStatus.OK);
 	}
 	
+	@GetMapping("/byReparto/{repartoid}")
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<List<Medico>> findMedicoByRepartoid(@PathVariable Long repartoid) {
+	    List<Medico> medici = medicoService.findMedicoByRepartoid(repartoid);
+	    return new ResponseEntity<List<Medico>>(medici, HttpStatus.OK);
+    }
 
 
 }

@@ -16,6 +16,8 @@ public interface ComuneService {
 
 	Comune getComuneById(Long id);
 
+	Comune findByNome(String nome);
+
 	
 
 	
