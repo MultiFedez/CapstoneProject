@@ -1,1 +1,60 @@
-<p>medico works!</p>
+<div class="col-12">
+  <div class="row">
+    <div class="col-12 col-md-6 p-1">
+      <div class="col-12  overflow-auto h-100">
+        <div class=" pt-5">
+          <div class="card">
+            <img [src]="['../../../../assets/'+ percorso +'.jpg']" class="card-img-top" alt="...">
+            <h2 class="pt-4">Nome : {{medico.nome}}</h2>
+            <p class="pt-2">Reparto : {{medico.repartoid}}</p>
+            <p class="pt-2">Specializzazione : {{medico.specializzazione}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 p-1">
+      <div class="card">
+        <div class="row">
+          <div class="col-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+          </div>
+          <div class="col-10">
+            <div class="comment-box ml-2">
+              <h4>Add a comment</h4>
+              <div class="rating">
+                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+              </div>
+              <div class="comment-area">
+                <textarea class="form-control" placeholder="what is your view?" rows="4"></textarea>
+              </div>
+              <div class="comment-btns mt-2">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="pull-left">
+                      <button class="btn btn-success btn-sm">Cancel</button>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="pull-right">
+                      <button class="btn btn-success send btn-sm">Send <i
+                          class="fa fa-long-arrow-right ml-1"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

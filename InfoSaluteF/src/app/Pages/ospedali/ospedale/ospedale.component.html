@@ -4,7 +4,7 @@
     <div class="col-12 col-md-7 overflow-auto h-100">
       <div class=" pt-5">
         <div class="card">
-          <img src="../../../../assets/pexels-pixabay-269077.jpg" class="card-img-top" alt="...">
+          <img [src]="['../../../../assets/'+ percorso +'.jpg']" class="card-img-top" alt="...">
           <h2 class="pt-4">{{ospedale.nome}}</h2>
           <p class="pt-2">{{ospedale.indirizzo}}</p>
           <p class="pt-2">{{ospedale.descrizione}}</p>
@@ -12,6 +12,8 @@
       </div>
     </div>
 
+
+    <!-- CERCA REPARTI
     <div class="col-5 d-none d-md-inline h-100">
       <div class="card blu">
       <form #s="ngForm" (ngSubmit)="submit()">
@@ -21,19 +23,18 @@
         <button class="btn btn-dark mt-3" type="submit">Cerca</button>
       </form>
     </div>
-    </div>
+    </div>-->
   </div>
 </div>
 
-<div class="sfondo col-12 px-2 pt-5 h-100">
-  <div class="row pt-3 h-100">
-    <h1>Reparti Ospedale :</h1>
-    <div class="col-12" *ngFor="let reparto of reparti">
-      <div class="card">
-        <h3>{{reparto.nome}}</h3>
-        <button class="btn btn-primary" [routerLink]="['/reparto/'+ reparto.id]">More Info</button>
+    <div class="sfondo col-12 px-2 pt-5 h-100">
+      <div class="row pt-3 h-100">
+        <h1>Reparti Ospedale :</h1>
+        <div class="col-12" *ngFor="let reparto of reparti">
+          <div class="card">
+            <h3>{{reparto.nome}}</h3>
+            <button class="btn btn-primary" [routerLink]="['/reparto/'+ reparto.id]">More Info</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-

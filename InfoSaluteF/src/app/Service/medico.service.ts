@@ -8,7 +8,6 @@ import { IMedico } from '../Interfaces/iMedico';
 })
 export class MedicoService {
 
-
   url: string = 'http://localhost:8080/api/medico';
   headers = new HttpHeaders();
 
@@ -26,6 +25,11 @@ setHeaders(){
   getMediciByReparto(params: any) {
     console.log(params);
     return this.http.get<IMedico[]>(this.url + '/byReparto/' + params.id, { headers: this.headers});
+  }
+
+  getById(params: any) {
+    console.log(params);
+    return this.http.get<IMedico>(this.url + '/' + params.id, { headers: this.headers});
   }
 
 }

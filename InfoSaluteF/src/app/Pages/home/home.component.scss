@@ -1,11 +1,38 @@
 .sfondo{
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../../../assets/pexels-tiana-238302.jpg");
+  background-image: url("../../../assets/sebastian-dumitru-36g19a7ivrs-unsplash.jpg");
+  width: 100%;
 }
 
 .card{
   border-radius: 5px;
   background: rgb(8, 82, 167,0.5);
-  color:white
+  color:white;
+}
+h2{
+  color: rgb(1, 68, 144);
+}
+#bottone{
+  background-color: rgb(1, 68, 144);
+}
+#bottone:hover{
+  background-color: rgb(8, 82, 167,0.5);
+}
+
+#footer{
+  width: 100%;
+  padding: 0px;
+  margin-right: 0;
+  background-color:rgb(8, 82, 167,0.5);
+}
+.Copy{
+  background-color: rgb(1, 68, 144);
+  padding: 0px;
+  margin-right: 0;
+}
+
+#link{
+  color: white;
+  text-decoration: none;
 }

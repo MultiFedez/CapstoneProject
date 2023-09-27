@@ -1,9 +1,18 @@
 .titolo{
   font-weight: 900;
-  color: rgb(2, 93, 197);
+  color: rgb(1, 68, 144);
+}
+.titolo2{
+  font-weight: 900;
+  color: rgba(3, 105, 222, 0.5);
 }
 
 nav{
   z-index: 2;
-  background-color: rgba(225,226,228,0);
 }
+
+.navbar{
+  background-color: rgba(228,229,231,0.9);
+  width: 100%;
+}
+

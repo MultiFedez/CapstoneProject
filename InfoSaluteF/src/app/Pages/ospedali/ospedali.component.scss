@@ -4,4 +4,28 @@
   background:rgb(8, 82, 167, 0.5);;
   color:white;
   box-shadow: 10px 10px 10px rgb(199, 199, 199);
+
+}
+
+#cerca{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+
+}
+
+#cardOsp{
+  height: 220px;
+  width: 250px;
+}
+
+.box{
+  background-color: rgba(228,229,231,0.9)
+}
+
+.row > * {
+
+  padding-right: 0;
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
 }

@@ -1,43 +1,49 @@
-<div class="container">
-<div class="col-12 px-2 pt-5 h-100">
-  <div class="row pt-3 h-100">
+<div class="box">
+  <div class="container-fluid">
+    <div class="row">
 
-    <div class="col-12 pt-5 d-inline d-md-none">
-      <div class="card blu">
-        <form #f="ngForm" (ngSubmit)="submit()">
-          <label for="nome" class="p-1">Cerca per Nome</label>
-          <input name="nome" type="text" class="form-control" id="nome"
-            placeholder="Inserisci il Nome dell'Ospedale" required ngModel>
-          <button class="btn btn-dark mt-3" type="submit">Cerca</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-7 overflow-auto h-100">
-      <div class="row">
-        <div class="col-6 p-4" *ngFor="let ospedale of ospedali">
-          <div class="card p-2">
-            <h3 class="card-title">{{ospedale.nome}}</h3>
-            <div class="card-body">
-              <p>{{ospedale.indirizzo}}</p>
-              <p>{{ospedale.descrizione}}</p>
-              <button class="btn btn-primary"[routerLink]="['/ospedale/'+ ospedale.id]">More Info</button>
-            </div>
-          </div>
+      <!-- CARD RICERCA -->
+      <div class="col-12 pt-4 ">
+        <div id="cerca" class="card blu mx-auto text-center">
+          <form #f="ngForm" (ngSubmit)="submit()">
+            <label for="nome" class="p-1">Cerca per Nome</label>
+            <input name="nome" type="text" class="form-control" id="nome"
+              placeholder="Inserisci il Nome dell'Ospedale"required [ngModel]="best">
+            <button class="btn btn-dark mt-3" type="submit">Cerca</button>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="destra col-5 pt-4 d-none d-md-inline h-100">
-      <div class="card blu">
-        <form #s="ngForm" (ngSubmit)="submit()">
-          <label for="nome" class="p-1">Cerca per Nome</label>
-          <input name="nome" type="text" class="form-control" id="nome"
-            placeholder="Inserisci il Nome dell'Ospedale" required [ngModel]="best">
-          <button class="btn btn-dark mt-3" type="submit">Cerca</button>
-        </form>
+      <!-- CARD LISTA OSPEDALI -->
+      <div class="cardOsp col-12 overflow-auto pt-4">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 p-4" *ngFor="let ospedale of ospedali">
+            <div id="cardOsp" class="card p-2">
+              <h4 class="card-title">{{ospedale.nome}}</h4>
+              <div class="card-body">
+                <p>{{ospedale.indirizzo}}</p>
+              </div>
+              <div>
+                <button class="btn btn-dark" [routerLink]="['/ospedale/'+ ospedale.id]">More Info</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+
+      <!-- CARD LATERALE DX
+      <div class="destra col-5 pt-4 d-none d-md-inline h-100">
+        <div class="card blu">
+          <form #s="ngForm" (ngSubmit)="submit()">
+            <label for="nome" class="p-1">Cerca per Nome</label>
+            <input name="nome" type="text" class="form-control" id="nome"
+            placeholder="Inserisci il Nome dell'Ospedale" required [ngModel]="best">
+            <button class="btn btn-dark mt-3" type="submit">Cerca</button>
+          </form>
+        </div>
+      </div> -->
+
   </div>
-</div>
 </div>

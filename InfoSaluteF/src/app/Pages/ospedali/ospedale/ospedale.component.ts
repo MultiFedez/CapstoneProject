@@ -15,6 +15,7 @@ export class OspedaleComponent implements OnInit {
 
   ospedale: IOspedale = {};
   reparti: IReparto[]=[];
+  percorso: string = '';
   @ViewChild('f') form!: NgForm;
 
   constructor(private route: ActivatedRoute, private service: OspedaleService, private repSvc:RepartoService) { }
@@ -39,6 +40,13 @@ export class OspedaleComponent implements OnInit {
   ngOnInit(): void {
     this.getOspedale()
     this.findRepartoByOspedaleid()
+    this.setPercorso()
+  }
+
+  setPercorso() {
+    const page = 'ospedale'
+    const num = Math.floor(Math.random() * 5) + 1;
+    this.percorso = page + num
   }
 
   getOspedale() {
@@ -70,5 +78,7 @@ export class OspedaleComponent implements OnInit {
       }
       )
   }
+
+
 
 }

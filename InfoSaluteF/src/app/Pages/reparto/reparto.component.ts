@@ -14,12 +14,19 @@ export class RepartoComponent implements OnInit {
 
   reparto: IReparto = {};
   medici : IMedico[] = [];
+  percorso: string = '';
 
   constructor(private route:ActivatedRoute ,private repSvc: RepartoService, private medSvc :MedicoService){}
 
   ngOnInit(): void {
     this.getById()
     this.getMediciByReparto()
+    this.setPercorso();
+  }
+  setPercorso() {
+    const page = 'reparto'
+    const num = Math.floor(Math.random() * 5) + 1;
+    this.percorso = page + num;
   }
 
   submit(){
