@@ -1,20 +1,20 @@
-<div class="container-fluid sfondo pt-5 h-100 ">
-  <div class="row pt-3">
+<div class="container-fluid sfondo pt-5">
+  <div class="row pt-3 flex">
+
+    <!-- CARD CERCA CITTA'-->
     <div class="col-12 d-inline d-md-none">
       <div class="card blu">
-        <div class="col-12 d-inline d-md-none">
           <form #f="ngForm" (ngSubmit)="submit()">
             <label for="nome" class="p-1">Cerca Città</label>
             <input [(ngModel)]="searchLocation" name="searchLocation" type="text" class="form-control" id="nome"
               placeholder="Inserisci il Nome dell'Ospedale" required ngModel>
             <button id="bottone" class="btn text-white mt-3" type="submit">Cerca</button>
           </form>
-        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12 col-md-7 overflow-auto">
+    <!-- TESTO LATO SX HOME -->
+      <div class="col-md-6 overflow-auto flex-item">
         <div class="">
           <h2 class="pt-4">InfoSalute</h2>
           <p class="pt-2">InfoSalute nato nel 2023 è il portale che vuole essere il riferimento sul mondo della salute e
@@ -33,13 +33,13 @@
             riportare la tua testimonianza con il maggior grado di dettaglio possibile, utilizzando un linguaggio
             corretto.Come confrontare i reparti - Per confrontare le opinioni dei pazienti di tutta Italia sui reparti
             degli ospedali italiani utilizza il menu a tendina che trovi nella colonna di destra. I reparti saranno
-            proposti in base al voto medio espresso nelle recensioni dei pazienti. Non si tratta di un criterio di
-            valutazione scientifico ma della sintesi delle recensioni espresse da decine di migliaia di utenti.
+            proposti in base al voto medio espresso nelle recensioni dei pazienti.
           </p>
         </div>
       </div>
 
-      <div class="Search col-5 d-none d-md-inline pt-4">
+      <!-- CARD CERCA CITTA'-->
+      <div class="Search col-md-6 d-none d-md-inline pt-4">
         <div class="card blu ">
           <form #f="ngForm" (ngSubmit)="submit()">
             <label for="nome" class="p-1">Cerca Città</label>
@@ -49,10 +49,13 @@
           </form>
         </div>
       </div>
-    </div>
+
+  </div>
+</div>
+
 
     <!-- FOOTER -->
-    <div id="footer" class="container-fluid">
+    <div id="footer" class="">
       <footer class="text-center text-light">
         <div class="container pt-4">
           <section class="mb-4">
@@ -113,5 +116,3 @@
       </footer>
 
     </div>
-  </div>
-</div>

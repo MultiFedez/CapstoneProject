@@ -1,15 +1,23 @@
-<div class="sfondo col-12 px-2 pt-5 h-100">
-  <div class="row pt-3 h-100">
+<div class="container-fluid sfondo pt-5 ">
+  <div class="row pt-3 flex">
 
-    <div class="col-12 col-md-7 overflow-auto h-100">
-      <div class=" pt-5">
+    <!-- CARD REPARTO -->
+    <div class="col-md-6 overflow-auto flex-item">
+      <h1 class="pt-3 pb-2">Reparto :</h1>
         <div class="card">
-          <img [src]="['../../../../assets/'+ percorso +'.jpg']" class="card-img-top" alt="...">
-          <h2 class="pt-4">{{reparto.nome}}</h2>
-          <p class="pt-2">{{reparto.piano}}</p>
-          <p class="pt-2">{{reparto.descrizione}}</p>
+          <img [src]="['../../../../assets/'+ percorso +'.jpg']" id="ImgCard" class="card-img-top" alt="...">
+          <h2 class="pt-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-h-circle ps-2" viewBox="0 0 16 16">
+              <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-5-3.998V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002H11Z"/>
+            </svg>
+            {{reparto.nome}}</h2>
+          <p class="pt-2 ps-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-steps ps-1" viewBox="0 0 16 16">
+              <path d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z"/>
+            </svg>
+           Piano : {{reparto.piano}}</p>
+          <p class="pt-2 ps-2">{{reparto.descrizione}}</p>
         </div>
-      </div>
     </div>
 
   <!-- CERCA MEDICO
@@ -22,21 +30,22 @@
         <button class="btn btn-dark mt-3" type="submit">Cerca</button>
       </form>
     </div>
-    </div>
-  </div>
-</div>    -->
+    </div>  -->
 
-<div class="sfondo col-12 px-2 pt-5 h-100">
-  <div class="row pt-3 h-100">
-    <h1>Medici Reparto :</h1>
-    <div class="col-12" *ngFor="let medico of medici">
-      <div class="card">
-        <h3>{{medico.nome}}</h3>
-        <h4>{{medico.specializzazione}}</h4>
-        <button class="btn btn-primary" [routerLink]="['/medico/'+ medico.id]">More Info</button>
+    <!-- CARD MEDICI -->
+
+      <div class="col-md-6 overflow-auto flex-item">
+        <h1 class="pt-3 pb-2">Medici Reparto :</h1>
+        <div class="col-12 pb-4" *ngFor="let medico of medici">
+          <div class="card">
+            <h3 class="ndoc">{{medico.nome}}</h3>
+            <button  id="bottone" class="btn text-white" [routerLink]="['/medico/'+ medico.id]">More Info</button>
+          </div>
+        </div>
       </div>
-    </div>
+
   </div>
 </div>
+
 
 

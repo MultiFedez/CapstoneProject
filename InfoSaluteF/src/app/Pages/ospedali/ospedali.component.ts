@@ -18,20 +18,20 @@ export class OspedaliComponent implements OnInit {
   constructor(private svc:OspedaleService){}
 
   submit() {
-    console.log(this.Bform.value.nome);
+   /* console.log(this.Bform.value.nome);
     console.log(this.Sform.value.nome);
     let nome = "";
     if(this.Sform.value.nome == null || this.Sform.value.nome == undefined || this.Sform.value.nome == ""){
       nome = this.Bform.value.nome
     }else{
       nome = this.Sform.value.nome
-    }
-    this.svc.findByNome(nome).subscribe(
+    }*/
+    this.svc.findByNome(this.Bform.value.nome).subscribe(
       (res) => {
         console.log(res);
         this.ospedali=res;
         this.Bform.reset();
-        this.Sform.reset();
+
       },
       (err) => {
         console.log(err.error.message);

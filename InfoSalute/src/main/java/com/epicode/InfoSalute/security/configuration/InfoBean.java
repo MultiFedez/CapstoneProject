@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import com.epicode.InfoSalute.security.entity.Comune;
 import com.epicode.InfoSalute.security.entity.Medico;
 import com.epicode.InfoSalute.security.entity.Ospedale;
+import com.epicode.InfoSalute.security.entity.Recensione;
 import com.epicode.InfoSalute.security.entity.Reparto;
 
 @Configuration
@@ -34,5 +35,11 @@ public class InfoBean {
     @Scope("prototype")
     public Reparto reparto() {
         return new Reparto();
+	}
+	
+	@Bean("recensione")
+    @Scope("prototype")
+    public Recensione recensione() {
+        return new Recensione();
 	}
 }
