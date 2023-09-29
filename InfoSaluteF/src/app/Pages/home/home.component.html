@@ -1,44 +1,75 @@
 <div class="container-fluid sfondo pt-5">
-  <div class="row pt-3 flex">
+  <div id="tema" class="row pt-3 flex">
 
-    <!-- CARD CERCA CITTA'-->
-    <div class="col-12 d-inline d-md-none">
-      <div class="card blu">
-          <form #f="ngForm" (ngSubmit)="submit()">
-            <label for="nome" class="p-1">Cerca Città</label>
-            <input [(ngModel)]="searchLocation" name="searchLocation" type="text" class="form-control" id="nome"
-              placeholder="Inserisci il Nome dell'Ospedale" required ngModel>
-            <button id="bottone" class="btn text-white mt-3" type="submit">Cerca</button>
-          </form>
+    <!-- CARD CERCA CITTA'PARTE SUPERIORE DELLA PAGINA-->
+    <div class="col-12 d-inline ">
+      <div class="">
+        <form id="barraRicerca" #f="ngForm" (ngSubmit)="submit()">
+          <label for="nome" class="p-1">Cerca Città</label>
+          <input [(ngModel)]="searchLocation" name="searchLocation" type="text" class="form-control" id="nome"
+            placeholder="Inserisci il Nome della Città" required ngModel>
+          <button id="bottone" class="btn text-white mt-2" type="submit">Cerca</button>
+        </form>
       </div>
     </div>
 
-    <!-- TESTO LATO SX HOME -->
-      <div class="col-md-6 overflow-auto flex-item">
-        <div class="">
-          <h2 class="pt-4">InfoSalute</h2>
-          <p class="pt-2">InfoSalute nato nel 2023 è il portale che vuole essere il riferimento sul mondo della salute e
-            della sanità
-            italiana. Su InfoSalute puoi leggere ed inserire recensioni su ospedali, case di cura, medici, potendo
-            trovare
-            informazioni preziose in base alle testimonianze degli altri pazienti. Leggi Chi siamo per maggiori
-            informazioni. I contatti di QSalute sono indicati nella pagina dedicata.
-            Come partecipare a QSalute
-            Come esprimere un'opinione - Per esprimere un'opinione su un reparto ospedaliero, su una struttura (ospedale
-            o
-            casa di cura) o su un farmaco devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la
-            tua
-            opinione' compilando il modulo che si caricherà. Per trovare la scheda del reparto puoi utilizzare il box di
-            ricerca sulla destra oppure la classificazione geografica che trovi usufruendo del menu in alto. Ricorda di
-            riportare la tua testimonianza con il maggior grado di dettaglio possibile, utilizzando un linguaggio
-            corretto.Come confrontare i reparti - Per confrontare le opinioni dei pazienti di tutta Italia sui reparti
-            degli ospedali italiani utilizza il menu a tendina che trovi nella colonna di destra. I reparti saranno
-            proposti in base al voto medio espresso nelle recensioni dei pazienti.
-          </p>
+    <!--
+    <div class="col-md-6 overflow-auto flex-item">
+      <div class="">
+        <h2 class="pt-4">InfoSalute</h2>
+        <p class="pt-2">InfoSalute è un portale che vuole essere un punto di riferimento su diversi servizi della sanità italiana.
+          Su InfoSalute puoi trovare informazioni preziose in base alle testimonianze degli altri pazienti,
+          inoltre potrai inserire recensioni su ospedali, reparti e medici.<br>
+          Come puoi esprimere la tua opinione? <br> Per esprimere un'opinione su un reparto ospedaliero, su una struttura (ospedale)
+           o su un medico devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la
+          tua opinione', compilando il modulo. Per trovare la scheda dell'ospedale puoi utilizzare il box di
+          ricerca oppure la classificazione che trovi usufruendo del menu in alto. Ricorda di
+          riportare la tua testimonianza con il maggior grado di dettaglio possibile, rispondendo in maniera onesta e utilizzando un linguaggio
+          appropriato.
+        </p>
+      </div>
+    </div> -->
+
+    <!--TESTO LATO SX HOME CUSTOM BLOCKQUOTE -->
+    <section class="col-md-6 overflow-auto flex-item py-5">
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto">
+            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+              <div class="blockquote-custom-icon shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-quote"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                </svg>
+              </div>
+              <p class="mb-0 mt-2">"InfoSalute è un portale che vuole essere un punto di riferimento su
+                diversi servizi della sanità italiana.
+                Su InfoSalute puoi trovare informazioni preziose in base alle testimonianze degli altri pazienti,
+                inoltre potrai inserire recensioni su ospedali, reparti e medici.<br>
+                Come puoi esprimere la tua opinione? <br> Per esprimere un'opinione su un reparto ospedaliero, su una
+                struttura (ospedale)
+                o su un medico devi accedere alla scheda corrispondente e cliccare sul bottone 'Aggiungi la
+                tua opinione', compilando il modulo. Per trovare la scheda dell'ospedale puoi utilizzare il box di
+                ricerca oppure la classificazione che trovi usufruendo del menu in alto. Ricorda di
+                riportare la tua testimonianza con il maggior grado di dettaglio possibile, rispondendo in maniera
+                onesta e utilizzando un linguaggio
+                appropriato."</p>
+              <footer class="blockquote-footer pt-4 mt-4 border-top">
+                <cite title="Source Title">Federico Morgante</cite>
+              </footer>
+            </blockquote>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- CARD CERCA CITTA'-->
+    <!-- CAROSELLO -->
+    <div class="col-md-6 mt-5">
+      <app-carosello></app-carosello>
+    </div>
+
+    <!-- CARD CERCA CITTA'
       <div class="Search col-md-6 d-none d-md-inline pt-4">
         <div class="card blu ">
           <form #f="ngForm" (ngSubmit)="submit()">
@@ -48,14 +79,10 @@
             <button id="bottone" class="btn text-white mt-3" type="submit">Cerca</button>
           </form>
         </div>
-      </div>
-
-  </div>
-</div>
-
+      </div> -->
 
     <!-- FOOTER -->
-    <div id="footer" class="">
+    <div id="footer" class=" mt-5 p-0">
       <footer class="text-center text-light">
         <div class="container pt-4">
           <section class="mb-4">
@@ -106,7 +133,6 @@
                   d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
               </svg>
             </a>
-
           </section>
         </div>
 
@@ -114,5 +140,6 @@
           © 2023 Copyright
         </div>
       </footer>
-
     </div>
+  </div>
+</div>
