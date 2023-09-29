@@ -1,10 +1,25 @@
-<div class="sfondo col-12 px-2 pt-5 h-100">
-  <div class="row pt-3 h-100">
-    <h1 class="Citta">{{comune.nome}}</h1>
-    <div class="col-12" *ngFor="let ospedale of comune.ospedali">
-      <div class="card">
-        <h3>{{ospedale.nome}}</h3>
+<!-- CARD OSPEDALI DI UNA SINGOLA CITTA' -->
+
+<div id="sfondoComune" class="container-fluid">
+  <div class="pt-3">
+    <h1 class="Citta pt-5">{{comune.nome}}</h1>
+  </div>
+  <div class="card card-custom bg-white border-white border-0">
+    <div class="card-custom-img"
+      style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);">
+    </div>
+    <div class="card-custom-avatar">
+      <img class="img-fluid"
+        src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg"
+        alt="Avatar" />
+    </div>
+    <div *ngFor="let ospedale of comune.ospedali">
+      <div class="card-body" style="overflow-y: auto">
+        <h4 class="card-title">{{ospedale.nome}}</h4>
+        <p class="card-text"></p>
         <button class="btn btn-primary" [routerLink]="['/ospedale/'+ ospedale.id]">More Info</button>
+      </div>
+      <div class="card-footer" style="background: inherit; border-color: inherit;">
       </div>
     </div>
   </div>

@@ -2,26 +2,25 @@
   <div class="container-fluid">
 
     <!-- CARD RICERCA -->
-    <div class="col-12 pt-5 ">
-      <div class="row">
-        <div id="cerca" class="card col-md-4 col-sm-6 mx-auto ps-0 text-center">
-          <form #f="ngForm" (ngSubmit)="submit()">
-            <label for="nome" class="p-1">Cerca per Nome</label>
-            <input name="nome" type="text" class="form-control" id="nome" placeholder="Inserisci il Nome dell'Ospedale"
-              required [ngModel]="best">
-            <button class="btn btn-dark mt-3" type="submit">Cerca</button>
-          </form>
-        </div>
+    <div class="row mb-2">
+      <div id="cerca" class="col-sm-8 col-md-8  mx-auto pt-4">
+        <form id="ricerca" #f="ngForm" (ngSubmit)="submit()">
+          <input name="nome" type="text" class="form-control" id="nome" placeholder="Inserisci il Nome dell'Ospedale"
+            required [ngModel]="best">
+          <button class="btn btn-dark me-3" type="submit">Cerca</button>
+        </form>
       </div>
     </div>
 
-    <!-- CARD LISTA OSPEDALI -->
+
+
+    <!-- CARD LISTA OSPEDALI
     <div class="cardOsp col-12 overflow-auto pt-4">
       <div class="row">
         <div class="col-md-4 col-sm-6 p-4" *ngFor="let ospedale of ospedali">
           <div id="cardOsp" class="card p-2">
             <h4 class="Info">Ospedale :</h4>
-            <h4 class="card-title ps-2"> {{ospedale.nome}}</h4>
+             <h4 class="card-title ps-2"> {{ospedale.nome}}</h4>
             <div class="card-body">
               <p class="Info">Indirizzo :</p>
               <p>{{ospedale.indirizzo}}</p>
@@ -32,8 +31,7 @@
           </div>
         </div>
       </div>
-    </div>
-
+    </div> -->
 
     <!-- CARD LATERALE DX
       <div class="destra col-5 pt-4 d-none d-md-inline h-100">
@@ -46,6 +44,28 @@
           </form>
         </div>
       </div> -->
+
+    <!-- CARDONA UNICA OSPEDALI -->
+    <div class="card card-custom bg-white border-white border-0">
+      <div class="card-custom-img"
+        style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);">
+      </div>
+      <div class="card-custom-avatar">
+        <img class="img-fluid"
+          src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg"
+          alt="Avatar" />
+      </div>
+      <div class=" " *ngFor="let ospedale of ospedali">
+        <div class="card-body" style="overflow-y: auto">
+          <h4 class="card-title">{{ospedale.nome}}</h4>
+          <p class="Info">Indirizzo :</p>
+          <p>{{ospedale.indirizzo}}</p>
+          <button class="btn btn-dark" [routerLink]="['/ospedale/'+ ospedale.id]">More Info</button>
+        </div>
+        <div class="card-footer" style="background: inherit; border-color: inherit;">
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

@@ -1,7 +1,10 @@
+import { IRecensione } from './../Interfaces/iRecensione';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserService } from './user.service';
 import { IMedico } from '../Interfaces/iMedico';
+import { Observable } from 'rxjs';
+import { IRecensioneTO } from '../Interfaces/iRecensioneTO';
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +35,13 @@ setHeaders(){
     return this.http.get<IMedico>(this.url + '/' + params.id, { headers: this.headers});
   }
 
+  creaCommento(rec: IRecensioneTO): Observable<IRecensione> {
+    console.log(rec);
+    return this.http.post('http://localhost:8080/api/recensione' + '/create', rec ,{headers: this.headers});
+  }
+
+  getRecensione(id:any){
+    console.log();
+    return this.http.get<IRecensione[]>('http://localhost:8080/api/recensione' + '/medico/' + id,{headers: this.headers});
+  }
 }

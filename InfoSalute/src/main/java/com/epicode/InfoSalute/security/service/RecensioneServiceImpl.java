@@ -1,5 +1,7 @@
 package com.epicode.InfoSalute.security.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,7 +25,6 @@ public class RecensioneServiceImpl implements RecensioneService{
 	
 	@Autowired @Qualifier("recensione") private ObjectProvider<Recensione> provider;
 	 
-	@Override
 	public Recensione creaRecensione(RecensioneTO recensioneTO) {
 		Recensione recensione = provider.getObject();
 		recensione.setCommento(recensioneTO.getCommento());
@@ -35,5 +36,11 @@ public class RecensioneServiceImpl implements RecensioneService{
 				return recensioneRepository.save(recensione);
 			}
 
-	
+	@Override
+	public List<Recensione> findByMedico(Long medicoid) {
+		Medico m = medicoRepository.findById(medicoid).get();
+		List<Recensione> lr = recensioneRepository.findByMedico(m);
+		return lr;
+	}
+
 }

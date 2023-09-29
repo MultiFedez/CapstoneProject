@@ -1,8 +1,5 @@
 package com.epicode.InfoSalute.security.payload;
 
-import com.epicode.InfoSalute.security.entity.Medico;
-import com.epicode.InfoSalute.security.entity.Specializzazione;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -15,7 +15,7 @@ import { OspedaleComponent } from './Pages/ospedali/ospedale/ospedale.component'
 import { ComuneComponent } from './Pages/comune/comune.component';
 import { RepartoComponent } from './Pages/reparto/reparto.component';
 import { MedicoComponent } from './Pages/medico/medico.component';
-import { RecensioneComponent } from './Pages/recensione/recensione.component';
+import { StarsPipe } from './Pipes/stars.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,7 @@ import { RecensioneComponent } from './Pages/recensione/recensione.component';
     ComuneComponent,
     RepartoComponent,
     MedicoComponent,
-    RecensioneComponent
+    StarsPipe
   ],
   imports: [
     BrowserModule,

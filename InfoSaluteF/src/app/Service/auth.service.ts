@@ -65,7 +65,7 @@ export class AuthService {
       return;
     } else {
       this.authSubject.next(user);
-      this.router.navigate(['/home']);
+     // this.router.navigate(['/home']);
       return;
     }
   }

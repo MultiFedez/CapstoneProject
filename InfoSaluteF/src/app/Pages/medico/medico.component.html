@@ -2,16 +2,99 @@
   <div class="row pt-3 flex">
 
     <!-- CARD MEDICO -->
-    <div class="col-md-6 overflow-auto flex-item">
+    <div class="col-6 overflow-auto flex-item pb-3">
       <h1 class="pt-3 pb-2">Medico :</h1>
       <div id="MedCard" class="card">
         <img [src]="['../../../../assets/'+ percorso +'.jpg']" id="ImgCard" class="card-img-top" alt="...">
-        <h3 class="pt-4">Nome : {{medico.nome}}</h3>
+        <h4 class="pt-4 ps-2">Nome : {{medico.nome}}</h4>
         <p class="pt-2 ps-2">Reparto : {{medico.repartoid}}</p>
         <p class="pt-2 ps-2">Specializzazione : {{medico.specializzazione}}</p>
+        <p class="pt-2 ps-2">Media Valutazione : {{valutazione | stars}}</p>
       </div>
     </div>
 
-    <app-recensione></app-recensione>
+    <!-- CARD COMMENTO -->
+    <div class="col-6 overflow-auto flex-item">
+      <h1 class="pt-3 pb-2">Recensione :</h1>
+      <div class="card">
+        <div class="col-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+          </svg>
+        </div>
+
+        <div class="col-10">
+          <div class="comment-box ml-2">
+            <h4>Aggiungi un commento</h4>
+            <!-- SELEZIONE A TENDINA CON NUMERI DI CARD COMMENTO-->
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Voto</label>
+              <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="recensione.voto">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="comment-area">
+              <textarea [(ngModel)]="recensione.commento" class="form-control" placeholder="Lascia un commento qui..."
+                rows="4"></textarea>
+            </div>
+            <div class="comment-btns mt-2">
+              <div class="row">
+                <div class="col-6">
+                  <div class="pull-left">
+                    <button class="btn btn-danger btn-sm">Cancel</button>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="pull-right">
+                    <button (click)="inviaCommento()" class="btn btn-success send btn-sm">Send <i
+                        class="fa fa-long-arrow-right ml-1"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD RECENSIONI LASCIATE
+    <div class="col-12" *ngFor="let recensione of recensioni">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Recensione :</h4>
+          <p> {{recensione.commento}}</p>
+          <p class="card-text">Voto : {{recensione.voto! | stars}}</p>
+        </div>
+      </div>
+    </div> -->
+    <div>
+      <div class="card card-custom bg-white border-white border-0">
+        <div class="card-custom-img"
+          style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);">
+        </div>
+        <div class="card-custom-avatar">
+          <img class="img-fluid"
+            src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg"
+            alt="Avatar" />
+        </div>
+        <div *ngFor="let recensione of recensioni">
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Recensione :</h4>
+            <p> {{recensione.commento}}</p>
+            <p class="card-text">Voto : {{recensione.voto! | stars}}</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

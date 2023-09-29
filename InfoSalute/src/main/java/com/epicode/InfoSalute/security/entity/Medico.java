@@ -33,7 +33,6 @@ public class Medico {
 	@Enumerated(EnumType.STRING)
 	private Specializzazione specializzazione;
 	
-	private List<Long> valutazione;
 	
 	@Column(nullable = false)
 	private Long repartoid;
