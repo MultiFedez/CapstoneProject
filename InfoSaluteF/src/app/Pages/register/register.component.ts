@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   fG!:FormGroup;
   registrationData: any = {};
   errorMessage: string = '';
+  error: string | undefined;
 
   constructor(private authSvc:AuthService, private router:Router) { }
 

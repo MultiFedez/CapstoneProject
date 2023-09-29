@@ -40,6 +40,7 @@
           </form>
           <p class="testo pt-2 d-flex align-items-center">Non hai un account? <button class="btn btn-outline-light ms-2"
               [routerLink]="['/register']">Registrati</button></p>
+          <div class="alert alert-danger my-3" role="alert" *ngIf="error"> {{error}} </div>
         </div>
       </div>
     </div>

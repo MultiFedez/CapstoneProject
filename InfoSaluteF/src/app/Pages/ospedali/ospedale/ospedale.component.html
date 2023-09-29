@@ -5,19 +5,24 @@
     <div class="col-md-6 overflow-auto flex-item">
       <div>
         <h1 class="pt-3 pb-2">Ospedale :</h1>
-        <div  class="card">
+        <div class="card">
           <img [src]="['../../../../assets/'+ percorso +'.jpg']" id="ImgCard" class="card-img-top" alt="...">
           <h2 class="pt-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-h-square ps-2" viewBox="0 0 16 16">
-              <path d="M11 4.002V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002H11Z"/>
-              <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2Zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2Z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-h-square ps-2" viewBox="0 0 16 16">
+              <path d="M11 4.002V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002H11Z" />
+              <path
+                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2Zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2Z" />
             </svg>
-            {{ospedale.nome}}</h2>
+            {{ospedale.nome}}
+          </h2>
           <p class="pt-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-geo-alt-fill ps-2" viewBox="0 0 16 16">
-              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class="bi bi-geo-alt-fill ps-2" viewBox="0 0 16 16">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
             </svg>
-             {{ospedale.indirizzo}}</p>
+            {{ospedale.indirizzo}}
+          </p>
           <p class="pt-2 ps-2">{{ospedale.descrizione}}</p>
         </div>
       </div>
@@ -36,17 +41,26 @@
     </div>-->
 
     <!-- CARD REPARTI -->
-
-        <div class="col-md-6 overflow-auto flex-item">
-          <h1 class="pt-3 pb-2">Reparti Ospedale :</h1>
-          <div class="col-12 pb-4" *ngFor="let reparto of reparti">
-            <div class="card">
-              <h3>{{reparto.nome}}</h3>
-              <button  id="bottone" class="btn text-white" [routerLink]="['/reparto/'+ reparto.id]">More Info</button>
-            </div>
+    <div class="col-md-6 overflow-auto flex-item">
+      <h1 class="pt-3 pb-2">Reparti Ospedale :</h1>
+      <div class=" card card-custom bg-white border-white border-0">
+        <div class="card-custom-img">
+        </div>
+        <div class="card-custom-avatar">
+          <img class="img-fluid"
+            src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg"
+            alt="Avatar" />
+        </div>
+        <div class=" " *ngFor="let reparto of reparti">
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">{{reparto.nome}}</h4>
+            <button id="bottone" class="btn text-white" [routerLink]="['/reparto/'+ reparto.id]">More Info</button>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
           </div>
         </div>
-
+      </div>
+    </div>
 
   </div>
 </div>

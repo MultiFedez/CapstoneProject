@@ -56,10 +56,11 @@
               </div>
 
               <button id="registerB" class="btn btn-dark" type="submit">Registrati</button>
-
+              <div class="alert alert-danger my-3" role="alert" *ngIf="error"> {{error}} </div>
             </form>
 
           </form>
+
           <p class="testo pt-2 d-flex align-items-center">Hai già un account? <button class="btn btn-outline-light ms-2"
               [routerLink]="['/login']">Accedi</button></p>
         </div>
