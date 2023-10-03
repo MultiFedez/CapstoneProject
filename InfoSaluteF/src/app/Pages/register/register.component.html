@@ -22,7 +22,7 @@
       <div class="card p-3 py-0">
         <div class="card-body">
           <h4 class="card-title">Register</h4>
-          <form id="register">
+
 
             <form class="form-group" [formGroup]="fG" (ngSubmit)="register()">
               <div class="mb-3">
@@ -56,11 +56,10 @@
               </div>
 
               <button id="registerB" class="btn btn-dark" type="submit">Registrati</button>
-              <div class="alert alert-danger my-3" role="alert" *ngIf="error"> {{error}} </div>
+
             </form>
 
-          </form>
-
+          <div class="alert alert-danger my-3" role="alert" *ngIf="error != undefined"> {{error}} </div>
           <p class="testo pt-2 d-flex align-items-center">Hai già un account? <button class="btn btn-outline-light ms-2"
               [routerLink]="['/login']">Accedi</button></p>
         </div>

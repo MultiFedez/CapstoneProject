@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/Service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+
+  constructor(private authSvc: AuthService){}
 
   ngOnInit(): void {
     // Inizializza il toggler della barra di navigazione
@@ -17,4 +20,9 @@ export class NavBarComponent implements OnInit {
 
     });
   }
+
+  Logout(){
+    this.authSvc.logout();
+  }
+
 }

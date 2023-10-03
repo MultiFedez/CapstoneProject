@@ -39,7 +39,7 @@ export class AuthService {
     this.authSubject.next(null);
     localStorage.removeItem('user');
     console.log('Utente Sloggato');
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/login']);
   }
 
   isAuth() {
