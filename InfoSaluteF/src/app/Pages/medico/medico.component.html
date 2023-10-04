@@ -2,7 +2,7 @@
   <div class="row pt-3 flex">
 
     <!-- CARD MEDICO -->
-    <div class="col-6 overflow-auto flex-item pb-3">
+    <div class=" col-sm-12 col-md-6 overflow-auto flex-item pb-3">
       <h1 class="pt-3 pb-2">Medico :</h1>
       <div id="MedCard" class="card">
         <img [src]="['../../../../assets/'+ percorso +'.jpg']" id="ImgCard" class="card-img-top" alt="...">
@@ -14,9 +14,9 @@
     </div>
 
     <!-- CARD COMMENTO -->
-    <div class="col-6 overflow-auto flex-item">
+    <div class=" col-sm-12 col-md-6 overflow-auto flex-item">
       <h1 class="pt-3 pb-2">Recensione :</h1>
-      <div class="card">
+      <div class="card mb-4">
         <div class="col-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
             viewBox="0 0 16 16">
@@ -28,9 +28,9 @@
 
         <div class="col-10">
           <div class="comment-box ml-2">
-            <h4>Aggiungi un commento</h4>
+            <h5 class="titCom">Aggiungi un commento:</h5>
             <!-- SELEZIONE A TENDINA CON NUMERI DI CARD COMMENTO-->
-            <div class="form-group">
+            <div class="form-group pb-4">
               <label for="exampleFormControlSelect1">Voto</label>
               <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="recensione.voto">
                 <option value="1">1</option>
@@ -47,11 +47,6 @@
             </div>
             <div class="comment-btns mt-2">
               <div class="row">
-                <div class="col-6">
-                  <div class="pull-left">
-                    <button class="btn btn-danger btn-sm">Cancel</button>
-                  </div>
-                </div>
                 <div class="col-6">
                   <div class="pull-right">
                     <button (click)="inviaCommento()" class="btn btn-success send btn-sm">Send <i
@@ -75,6 +70,7 @@
         </div>
       </div>
     </div> -->
+
     <div>
       <div class="card card-custom bg-white border-white border-0">
         <div class="card-custom-img"
